@@ -1,5 +1,5 @@
 <template>
-    <div id="Order" class="Order">
+    <div id="Cart" class="Cart">
       <van-checkbox-group class="card-goods" v-model="checkedGoods">
         <van-checkbox
           class="card-goods__item"

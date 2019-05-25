@@ -2,7 +2,7 @@
   <div id="app">
     <van-tabbar v-model="active">
       <van-tabbar-item icon="goods-collect-o" ><router-link to="/index">商品</router-link></van-tabbar-item>
-      <van-tabbar-item icon="new-arrival-o"><router-link to="/new">分类</router-link></van-tabbar-item>
+      <van-tabbar-item icon="cart-o"><router-link to="/cart">购物车</router-link></van-tabbar-item>
       <van-tabbar-item icon="contact"><router-link to="/me">我的</router-link></van-tabbar-item>
     </van-tabbar>
     <router-view/>

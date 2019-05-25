@@ -2,7 +2,7 @@
 
 import Vue from 'vue';
 import axios from "axios";
-
+import Router from '../router'
 // Full config:  https://github.com/axios/axios#request-config
 // axios.defaults.baseURL = process.env.baseURL || process.env.apiUrl || '';
 // axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
@@ -13,9 +13,11 @@ let config = {
   // timeout: 60 * 1000, // Timeout
   // withCredentials: true, // Check cross-site Access-Control
 };
-
-const _axios = axios.create(config);
+// 超时时间
+axios.defaults.timeout = 10000;
+axios.defaults.withCredentials = true;
 axios.defaults.baseURL = "http://localhost:9888";  //修改默认地址
+const _axios = axios.create(config);
 _axios.interceptors.request.use(
   function(config) {
     //设置默认header
@@ -38,10 +40,17 @@ _axios.interceptors.request.use(
 // Add a response interceptor
 _axios.interceptors.response.use(
   function(response) {
-    // Do something with response data
-    return response;
+      if("401"==response.data.errorCode){
+          Router.push("/login")
+      }
+      if("200"==response.data.code){
+         return response;
+     }else {
+         alert(response.data.msg);
+     }
   },
   function(error) {
+      alert(error);
     // Do something with response error
     return Promise.reject(error);
   }
@@ -65,5 +74,4 @@ Plugin.install = function(Vue, options) {
 };
 
 Vue.use(Plugin)
-
 export default Plugin;

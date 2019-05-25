@@ -23,6 +23,21 @@ export default new Router({
       component: () => import('./views/me/Reg.vue')
     },
     {
+        path: '/user',
+        name: 'User',
+        component: () => import('./views/me/User.vue')
+    },
+    {
+        path: '/addressList',
+        name: 'AddressList',
+        component: () => import('./views/me/AddressList.vue')
+    },
+    {
+        path: '/faves',
+        name: 'Faves',
+        component: () => import('./views/me/Faves.vue')
+    },
+    {
       path: '/new',
       name: 'New',
       component: () => import('./views/New.vue')

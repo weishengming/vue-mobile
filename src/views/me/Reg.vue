@@ -12,13 +12,13 @@
         <van-field
           v-model="regUser.userName"
           required
-          label="手机号"
+          label="用户名"
           right-icon="question-o"
-          placeholder="请输入手机号"
+          placeholder="请输入用户名"
           @click-right-icon="$toast('question')"
         />
         <van-field
-          v-model="regUser.nickName"
+          v-model="regUser.name"
           required
           label="昵称"
           placeholder="请输入昵称"
@@ -47,7 +47,7 @@
       return{
         regUser: {
           userName: '',
-          nickName: '',
+          name: '',
           password: ''
         }
       }

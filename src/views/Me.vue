@@ -14,7 +14,7 @@
         </van-col>
         <van-col span="6">
           <van-icon name="tosend" />
-          待发货
+          <router-link to="/register">待付款</router-link>
         </van-col>
         <van-col span="6">
           <van-icon name="logistics" />
@@ -33,18 +33,12 @@
       <!--</van-cell-group>-->
 
       <van-cell-group>
-        <van-cell icon="location-o" value="我的地址"  is-link />
-        <van-cell  icon="star-o" value="我的收藏" is-link />
+        <van-cell icon="location-o" value="我的地址" v-on:click="addressList"  is-link />
+        <van-cell  icon="star-o" value="我的收藏" v-on:click="faves"  is-link />
       </van-cell-group>
-
+      <br>
       <van-cell-group>
-        <van-cell value="关于我们" icon="question-o" is-link />
-        <van-cell value="联系我们" icon="phone-o" is-link />
-      </van-cell-group>
-
-
-      <van-cell-group>
-       <van-cell v-model="user.userName"   size="large" v-on:click="editUser" label="" is-link/>
+       <van-cell icon="user-o"  v-model="user.userName"   size="large" v-on:click="editUser" label="" is-link/>
        </van-cell-group>
     </div>
 </template>
@@ -75,7 +69,7 @@ export default {
       if("200"==res.data.code){
         localStorage.setItem('userId',res.data.data.id);
         this.$store.dispatch('setUserId',res.data.data.id);
-        this.user.userName=res.data.data.nickName+" "+res.data.data.userName;
+        this.user.userName=res.data.data.name;
       }else{
         alert(res.data.msg);
       }
@@ -83,7 +77,17 @@ export default {
   },
   methods:{
     editUser(){
-       this.$router.push("/login")
+        if(this.userName=="登录/注册"){
+            this.$router.push("/login")
+        }else {
+            this.$router.push("/user")
+        }
+    },
+    faves(){
+        this.$router.push("/faves")
+    },
+    addressList(){
+        this.$router.push("/addressList")
     }
   },
   //进入组件时
