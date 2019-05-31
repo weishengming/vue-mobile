@@ -68,7 +68,6 @@ export default {
     this.$axios.get('/user/getUserInfo',localStorage.getItem('token')).then(res=>{
       if("200"==res.data.code){
         localStorage.setItem('userId',res.data.data.id);
-        this.$store.dispatch('setUserId',res.data.data.id);
         this.user.userName=res.data.data.name;
       }else{
         alert(res.data.msg);

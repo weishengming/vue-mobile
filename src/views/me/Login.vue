@@ -12,10 +12,9 @@
       <van-field
         v-model="loginUser.userName"
         required
-        label="用户名"
+        label="手机号"
         right-icon="question-o"
-        placeholder="请输入用户名"
-        @click-right-icon="$toast('question')"
+        placeholder="请输入手机号"
       />
       <van-field
         v-model="loginUser.password"

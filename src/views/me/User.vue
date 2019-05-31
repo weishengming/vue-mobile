@@ -11,7 +11,7 @@
             <van-field
                     v-model="user.userName"
                     required
-                    label="用户名"
+                    label="手机号"
                     disabled
                     right-icon="question-o"
                     placeholder="请输入手机号"
@@ -30,12 +30,6 @@
                     label="昵称"
                     placeholder="请输入昵称"
             />
-            <van-field
-                    v-model="user.phone"
-                    required
-                    label="手机号"
-                    placeholder="请输入手机号"
-            />
             <van-radio-group v-model="user.sex">
                 <van-cell-group>
                     <van-cell icon="user-o"  title="男" clickable @click="user.sex = '男'">
@@ -46,6 +40,7 @@
                     </van-cell>
                 </van-cell-group>
             </van-radio-group>
+
             <br>
 
         </van-cell-group>
@@ -93,7 +88,6 @@
                 this.$axios.get('/user/getUserInfo',localStorage.getItem('token')).then(res=>{
                     if("200"==res.data.code){
                         localStorage.setItem('userId',res.data.data.id);
-                        this.$store.dispatch('setUserId',res.data.data.id);
                         this.user=res.data.data;
                     }else{
                         alert(res.data.msg);
