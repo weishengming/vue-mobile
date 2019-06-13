@@ -2,7 +2,6 @@
     <div id="Me" class="Me">
       <van-nav-bar
               :title=this.user.userName
-              left-text="微生命"
               left-arrow
               @click-left="onClickLeft"
       />
@@ -16,11 +15,11 @@
             <van-cell  icon="friends-o" value="帮一帮" v-on:click="faves"  is-link />
         </van-cell-group>
         <br/>
-        <van-cell-group>
-            <van-cell icon="location-o" value="我的地址" v-on:click="addressList"  is-link />
-        </van-cell-group>
+        <!--<van-cell-group>-->
+            <!--<van-cell icon="location-o" value="我的地址" v-on:click="addressList"  is-link />-->
+        <!--</van-cell-group>-->
       <van-cell-group>
-       <van-cell icon="setting-o"   value="我的设置"  size="large" v-on:click="editUser" label="" is-link/>
+       <van-cell icon="setting-o"   value="设置"  size="large" v-on:click="setting" label="" is-link/>
        </van-cell-group>
     </div>
 </template>
@@ -58,12 +57,8 @@ export default {
     })
   },
   methods:{
-    editUser(){
-        if(this.userName=="登录/注册"){
-            this.$router.push("/login")
-        }else {
-            this.$router.push("/user")
-        }
+    setting(){
+       this.$router.push("/setting")
     },
     onClickLeft(){
       this.$router.push("/index")

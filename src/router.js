@@ -36,12 +36,15 @@ export default new Router({
         path: '/faves',
         name: 'Faves',
         component: () => import('./views/me/Faves.vue')
-    },
-    {
+    },{
       path: '/new',
       name: 'New',
       component: () => import('./views/back/New.vue')
     },{
+        path: '/setting',
+        name: 'Setting',
+        component: () => import('./views/me/Setting.vue')
+     },{
       path: '/index',
       name: 'Index',
       component: () => import('./views/Index.vue')
