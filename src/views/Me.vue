@@ -2,7 +2,7 @@
     <div id="Me" class="Me">
       <van-nav-bar
               :title=this.user.userName
-              left-text="消息"
+              left-text="微生命"
               left-arrow
               @click-left="onClickLeft"
       />

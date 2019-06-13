@@ -1,7 +1,7 @@
 <template>
     <div id="Index" class="">
         <van-nav-bar
-            title="消息"
+            title="微生命"
             right-text="我的"
             @click-right="onClickRight"
         />
