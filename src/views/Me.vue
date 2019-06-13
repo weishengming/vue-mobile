@@ -1,53 +1,36 @@
 <template>
     <div id="Me" class="Me">
-      <img class="user-poster" src="https://img.yzcdn.cn/public_files/2017/10/23/8690bb321356070e0b8c4404d087f8fd.png">
-      <van-row class="user-links">
-        <van-col span="6">
-          <van-icon name="pending-payment" />
-
-          <router-link to="/cart">待付款</router-link>
-        </van-col>
-        <van-col span="6">
-          <van-icon name="records" />
-
-          <router-link to="/goods">待接单</router-link>
-        </van-col>
-        <van-col span="6">
-          <van-icon name="tosend" />
-          <router-link to="/register">待付款</router-link>
-        </van-col>
-        <van-col span="6">
-          <van-icon name="logistics" />
-          已发货
-        </van-col>
-      </van-row>
-
-      <van-cell-group class="user-group">
-        <van-cell icon="records" value="全部订单" is-link />
-      </van-cell-group>
-
-      <!--<van-cell-group>-->
-        <!--<van-cell icon="points" value="我的积分" is-link />-->
-        <!--<van-cell icon="gold-coin-o" value="我的优惠券" is-link />-->
-        <!--<van-cell icon="gift-o" value="我收到的礼物" is-link />-->
-      <!--</van-cell-group>-->
-
+      <van-nav-bar
+              :title=this.user.userName
+              left-text="消息"
+              left-arrow
+              @click-left="onClickLeft"
+      />
+        <van-cell-group>
+            <van-cell icon="eye-o" value="看一看" v-on:click="addressList"  is-link />
+            <van-cell  icon="chat-o" value="问一问" v-on:click="faves"  is-link />
+        </van-cell-group>
+        <br>
+        <van-cell-group>
+            <van-cell icon="search" value="搜一搜" v-on:click="addressList"  is-link />
+            <van-cell  icon="friends-o" value="帮一帮" v-on:click="faves"  is-link />
+        </van-cell-group>
+        <br/>
+        <van-cell-group>
+            <van-cell icon="location-o" value="我的地址" v-on:click="addressList"  is-link />
+        </van-cell-group>
       <van-cell-group>
-        <van-cell icon="location-o" value="我的地址" v-on:click="addressList"  is-link />
-        <van-cell  icon="star-o" value="我的收藏" v-on:click="faves"  is-link />
-      </van-cell-group>
-      <br>
-      <van-cell-group>
-       <van-cell icon="user-o"  v-model="user.userName"   size="large" v-on:click="editUser" label="" is-link/>
+       <van-cell icon="setting-o"   value="我的设置"  size="large" v-on:click="editUser" label="" is-link/>
        </van-cell-group>
     </div>
 </template>
 
 <script>
 
-import { Row, Col, Icon, Cell,Panel, CouponCell,CellGroup } from 'vant';
+import { NavBar,Row, Col, Icon, Cell,Panel, CouponCell,CellGroup } from 'vant';
 export default {
   components: {
+    [NavBar.name]:NavBar,
     [Panel.name]:Panel,
     [Cell.name]:Cell,
     [CouponCell.name]:CouponCell,
@@ -82,12 +65,15 @@ export default {
             this.$router.push("/user")
         }
     },
-    faves(){
-        this.$router.push("/faves")
-    },
-    addressList(){
-        this.$router.push("/addressList")
+    onClickLeft(){
+      this.$router.push("/index")
     }
+    // faves(){
+    //     this.$router.push("/faves")
+    // },
+    // addressList(){
+    //     this.$router.push("/addressList")
+    // }
   },
   //进入组件时
   beforeRouteEnter: function (to, from, next) {

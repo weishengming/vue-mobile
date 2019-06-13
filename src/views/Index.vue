@@ -1,5 +1,11 @@
 <template>
     <div id="Index" class="">
+        <van-nav-bar
+            title="消息"
+            right-text="我的"
+            @click-right="onClickRight"
+        />
+
         <van-swipe :autoplay="3000" indicator-color="white">
             <van-swipe-item>1</van-swipe-item>
             <van-swipe-item>2</van-swipe-item>
@@ -10,9 +16,10 @@
 </template>
 
 <script>
-    import { Swipe, SwipeItem } from 'vant';
+    import { NavBar,Swipe, SwipeItem } from 'vant';
 export default {
   components: {
+      [NavBar.name]:NavBar,
       [Swipe.name]:Swipe,
       [SwipeItem.name]:SwipeItem,
   },
@@ -25,6 +32,9 @@ export default {
     }
   },
   methods:{
+      onClickRight(){
+          this.$router.push("/me");
+      }
   }
 }
 </script>
