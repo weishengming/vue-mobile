@@ -1,9 +1,11 @@
 <template>
-    <div id="Me" class="Me">
+    <div id="Discover" class="Discover">
       <van-nav-bar
-              :title=this.user.userName
+              title="发现"
               left-arrow
               @click-left="onClickLeft"
+              right-text="设置"
+              @click-right="onClickRight"
       />
         <van-cell-group>
             <van-cell icon="eye-o" value="看一看" v-on:click="addressList"  is-link />
@@ -15,17 +17,9 @@
             <van-cell  icon="friends-o" value="帮一帮" v-on:click="faves"  is-link />
         </van-cell-group>
         <br/>
-        <!--<van-cell-group>-->
-            <!--<van-cell icon="location-o" value="我的地址" v-on:click="addressList"  is-link />-->
-        <!--</van-cell-group>-->
-      <van-cell-group>
-       <van-cell icon="setting-o"   value="设置"  size="large" v-on:click="setting" label="" is-link/>
-       </van-cell-group>
     </div>
 </template>
-
 <script>
-
 import { NavBar,Row, Col, Icon, Cell,Panel, CouponCell,CellGroup } from 'vant';
 export default {
   components: {
@@ -40,35 +34,17 @@ export default {
   },
   data () {
     return {
-      user:{
-        userName:'登录/注册'
-      }
+
     }
-  },
-  created(){
-    //通过token 获取用户信息
-    this.$axios.get('/user/getUserInfo',localStorage.getItem('token')).then(res=>{
-      if("200"==res.data.code){
-        localStorage.setItem('userId',res.data.data.id);
-        this.user.userName=res.data.data.name;
-      }else{
-        alert(res.data.msg);
-      }
-    })
   },
   methods:{
-    setting(){
-       this.$router.push("/setting")
-    },
     onClickLeft(){
       this.$router.push("/index")
+    },
+    onClickRight(){
+       this.$router.push("/setting")
     }
-    // faves(){
-    //     this.$router.push("/faves")
-    // },
-    // addressList(){
-    //     this.$router.push("/addressList")
-    // }
+
   },
   //进入组件时
   beforeRouteEnter: function (to, from, next) {
@@ -86,11 +62,9 @@ export default {
       height: 53vw;
       display: block;
     }
-
     &-group {
       margin-bottom: 15px;
     }
-
     &-links {
       padding: 15px 0;
       font-size: 12px;

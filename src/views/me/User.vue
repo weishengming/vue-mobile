@@ -99,7 +99,7 @@
             },
             save(){
                 this.$axios.post('/user/save',this.user).then(res=>{
-                    this.$router.push("/me")
+                    this.$router.push("/discover")
                 })
             }
         }

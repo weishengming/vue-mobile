@@ -8,9 +8,9 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/me',
-      name: 'Me',
-      component: () => import('./views/Me.vue')
+      path: '/discover',
+      name: 'Discover',
+      component: () => import('./views/Discover.vue')
     },
     {
       path: '/login',

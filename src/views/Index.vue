@@ -2,7 +2,7 @@
     <div id="Index" class="">
         <van-nav-bar
             title="微生命"
-            right-text="我的"
+            right-text="发现"
             @click-right="onClickRight"
         />
 
@@ -33,7 +33,7 @@ export default {
   },
   methods:{
       onClickRight(){
-          this.$router.push("/me");
+          this.$router.push("/discover");
       }
   }
 }

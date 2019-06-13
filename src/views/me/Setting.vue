@@ -66,7 +66,7 @@
                 }
             },
             onClickLeft(){
-                this.$router.push("/me")
+                this.$router.push("/discover")
             }
             // faves(){
             //     this.$router.push("/faves")
