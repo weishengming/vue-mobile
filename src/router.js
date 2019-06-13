@@ -40,7 +40,7 @@ export default new Router({
     {
       path: '/new',
       name: 'New',
-      component: () => import('./views/New.vue')
+      component: () => import('./views/back/New.vue')
     },{
       path: '/index',
       name: 'Index',
@@ -48,11 +48,11 @@ export default new Router({
     },{
       path: '/cart',
       name: 'Cart',
-      component: () => import('./views/Cart.vue')
+      component: () => import('./views/back/Cart.vue')
     },{
       path: '/goods',
       name: 'Goods',
-      component: () => import('./views/Goods.vue')
+      component: () => import('./views/back/Goods.vue')
     }
   ]
 })
