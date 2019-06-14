@@ -1,24 +1,25 @@
 <template>
     <div id="Me" class="Me">
         <van-nav-bar
-                title="设置"
+                title="我的"
                 left-arrow
-                @click-left="onClickLeft"
-        />
+                @click-left="onClickLeft">
+        <van-icon name="home-o" slot="left" />
+        </van-nav-bar>
 
         <van-cell-group>
-            <van-cell icon="eye-o" value="帐号管理" v-on:click="addressList"  is-link />
+            <van-cell icon="manager-o" value="帐号管理" v-on:click="addressList"  is-link />
         </van-cell-group>
         <br>
         <van-cell-group>
-            <van-cell  icon="chat-o" value="隐私设置" v-on:click="faves"  is-link />
-            <van-cell  icon="chat-o" value="地址管理" v-on:click="faves"  is-link />
+            <van-cell  icon="browsing-history-o" value="隐私设置" v-on:click="faves"  is-link />
+            <van-cell  icon="location-o" value="地址管理" v-on:click="faves"  is-link />
         </van-cell-group>
 
         <br>
         <van-cell-group>
-            <van-cell icon="search" value="帮助与反馈" v-on:click="addressList"  is-link />
-            <van-cell  icon="friends-o" value="关于我们" v-on:click="faves"  is-link />
+            <van-cell icon="comment-o" value="帮助与反馈" v-on:click="addressList"  is-link />
+            <van-cell  icon="phone-o" value="关于我们" v-on:click="faves"  is-link />
         </van-cell-group>
 
 
@@ -26,7 +27,6 @@
 </template>
 
 <script>
-
     import { NavBar,Row, Col, Icon, Cell,Panel, CouponCell,CellGroup } from 'vant';
     export default {
         components: {
@@ -66,21 +66,14 @@
                 }
             },
             onClickLeft(){
-                this.$router.push("/discover")
+                this.$router.push("/index")
             }
-            // faves(){
-            //     this.$router.push("/faves")
-            // },
-            // addressList(){
-            //     this.$router.push("/addressList")
-            // }
         },
         //进入组件时
         beforeRouteEnter: function (to, from, next) {
             window.document.body.style.backgroundColor = '#fbf9ff';
             next()
         },
-
     }
 </script>
 

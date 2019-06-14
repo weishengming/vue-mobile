@@ -4,17 +4,18 @@
               title="发现"
               left-arrow
               @click-left="onClickLeft"
-              right-text="设置"
-              @click-right="onClickRight"
-      />
+      >
+        <van-icon name="home-o" slot="left" />
+        </van-nav-bar>
+
         <van-cell-group>
-            <van-cell icon="eye-o" value="看一看" v-on:click="addressList"  is-link />
-            <van-cell  icon="chat-o" value="问一问" v-on:click="faves"  is-link />
+            <van-cell icon="eye-o" value="看一看" v-on:click="look"  is-link />
+            <van-cell  icon="question-o" value="问一问" v-on:click="ask"  is-link />
         </van-cell-group>
         <br>
         <van-cell-group>
-            <van-cell icon="search" value="搜一搜" v-on:click="addressList"  is-link />
-            <van-cell  icon="friends-o" value="帮一帮" v-on:click="faves"  is-link />
+            <van-cell icon="chat-o" value="聊一聊" v-on:click="chat"  is-link />
+            <van-cell  icon="friends-o" value="帮一帮" v-on:click="help"  is-link />
         </van-cell-group>
         <br/>
     </div>
@@ -41,9 +42,18 @@ export default {
     onClickLeft(){
       this.$router.push("/index")
     },
-    onClickRight(){
-       this.$router.push("/setting")
-    }
+  look(){
+      this.$router.push("/look");
+  },
+  ask(){
+      this.$router.push("/ask");
+  },
+  chat(){
+      this.$router.push("/chat");
+  },
+  help(){
+      this.$router.push("/help");
+  }
 
   },
   //进入组件时

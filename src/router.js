@@ -32,6 +32,26 @@ export default new Router({
         name: 'AddressList',
         component: () => import('./views/me/AddressList.vue')
     },
+      {
+          path: '/look',
+          name: 'Look',
+          component: () => import('./views/discover/Look.vue')
+      },
+      {
+          path: '/ask',
+          name: 'Ask',
+          component: () => import('./views/discover/Ask.vue')
+      },
+      {
+          path: '/chat',
+          name: 'Chat',
+          component: () => import('./views/discover/Chat.vue')
+      },
+      {
+          path: '/help',
+          name: 'Help',
+          component: () => import('./views/discover/Help.vue')
+      },
     {
         path: '/faves',
         name: 'Faves',
@@ -41,9 +61,9 @@ export default new Router({
       name: 'New',
       component: () => import('./views/back/New.vue')
     },{
-        path: '/setting',
-        name: 'Setting',
-        component: () => import('./views/me/Setting.vue')
+        path: '/me',
+        name: 'Me',
+        component: () => import('./views/Me.vue')
      },{
       path: '/index',
       name: 'Index',

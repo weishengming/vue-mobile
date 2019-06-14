@@ -65,7 +65,7 @@
             let token = res.data.data;
             localStorage.setItem('token',token);
             this.$store.dispatch('setToken',token);
-            this.$router.push("/goods")
+            this.$router.push("/index")
           }else{
             alert(res.data.msg);
           }
