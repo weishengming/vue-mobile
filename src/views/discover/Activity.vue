@@ -1,11 +1,11 @@
 <template>
     <div>
         <van-nav-bar
-                title="问一问"
+                title="动一动"
                 left-arrow
                 @click-left="onClickLeft"
         />
-        问一问
+        动一动
     </div>
 
 </template>
@@ -23,7 +23,7 @@
             [Tabs.name]:Tabs,
             [Icon.name]:Icon,
         },
-        name: "Ask",
+        name: "Activity",
         methods:{
             onClickLeft(){
                 this.$router.push("/discover")

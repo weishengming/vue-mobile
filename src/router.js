@@ -52,6 +52,11 @@ export default new Router({
           name: 'Help',
           component: () => import('./views/discover/Help.vue')
       },
+      {
+          path: '/activity',
+          name: 'Activity',
+          component: () => import('./views/discover/Activity.vue')
+      },
     {
         path: '/faves',
         name: 'Faves',

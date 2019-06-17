@@ -15,8 +15,14 @@
         <br>
         <van-cell-group>
             <van-cell icon="chat-o" value="聊一聊" v-on:click="chat"  is-link />
-            <van-cell  icon="friends-o" value="帮一帮" v-on:click="help"  is-link />
+            <van-cell  icon="friends-o" value="动一动" v-on:click="activity"  is-link />
         </van-cell-group>
+
+        <!--<br>-->
+        <!--<van-cell-group>-->
+            <!--<van-cell  icon="like-o" value="帮一帮" v-on:click="help"  is-link />-->
+            <!--<van-cell icon="cart-o" value="购一购" v-on:click="chat"  is-link />-->
+        <!--</van-cell-group>-->
         <br/>
     </div>
 </template>
@@ -53,6 +59,9 @@ export default {
   },
   help(){
       this.$router.push("/help");
+  },
+  activity(){
+      this.$router.push("/activity");
   }
 
   },
