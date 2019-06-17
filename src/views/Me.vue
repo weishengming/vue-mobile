@@ -9,20 +9,18 @@
 
         <van-cell-group>
             <van-cell icon="manager-o" value="帐号管理" v-on:click="addressList"  is-link />
+            <van-cell  icon="star-o" value="我的关注" v-on:click="faves"  is-link />
         </van-cell-group>
         <br>
         <van-cell-group>
             <van-cell  icon="browsing-history-o" value="隐私设置" v-on:click="faves"  is-link />
             <van-cell  icon="location-o" value="地址管理" v-on:click="faves"  is-link />
         </van-cell-group>
-
         <br>
         <van-cell-group>
             <van-cell icon="comment-o" value="帮助与反馈" v-on:click="addressList"  is-link />
             <van-cell  icon="phone-o" value="关于我们" v-on:click="faves"  is-link />
         </van-cell-group>
-
-
     </div>
 </template>
 
