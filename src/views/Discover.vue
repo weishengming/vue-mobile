@@ -15,14 +15,19 @@
         <br>
         <van-cell-group>
             <van-cell icon="chat-o" value="聊一聊" v-on:click="chat"  is-link />
-            <van-cell  icon="friends-o" value="动一动" v-on:click="activity"  is-link />
+            <van-cell  icon="like-o" value="帮一帮" v-on:click="help"  is-link />
         </van-cell-group>
-
-        <!--<br>-->
+        <br>
+        <!--购物模块最后上线-->
         <!--<van-cell-group>-->
-            <!--<van-cell  icon="like-o" value="帮一帮" v-on:click="help"  is-link />-->
             <!--<van-cell icon="cart-o" value="购一购" v-on:click="chat"  is-link />-->
         <!--</van-cell-group>-->
+        <!--<br>-->
+        <van-cell-group>
+            <!--这个模块 等人员量上来在后期扩展-->
+            <!--<van-cell  icon="friends-o" value="动一动" v-on:click="activity"  is-link />-->
+            <van-cell  icon="smile-o" value="找一找" v-on:click="help"  is-link />
+        </van-cell-group>
         <br/>
     </div>
 </template>
