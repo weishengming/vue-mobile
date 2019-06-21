@@ -53,9 +53,9 @@ export default new Router({
           component: () => import('./views/discover/Help.vue')
       },
       {
-          path: '/activity',
-          name: 'Activity',
-          component: () => import('./views/discover/Activity.vue')
+          path: '/church',
+          name: 'Church',
+          component: () => import('./views/discover/Church.vue')
       },
     {
         path: '/faves',

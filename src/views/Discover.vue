@@ -17,18 +17,18 @@
             <van-cell icon="chat-o" value="聊一聊" v-on:click="chat"  is-link />
             <van-cell  icon="like-o" value="帮一帮" v-on:click="help"  is-link />
         </van-cell-group>
-        <br>
-        <!--购物模块最后上线-->
+
+        <!--这个模块 等人员量上来在后期扩展-->
         <!--<van-cell-group>-->
             <!--<van-cell icon="cart-o" value="购一购" v-on:click="chat"  is-link />-->
         <!--</van-cell-group>-->
         <!--<br>-->
+        <br>
         <van-cell-group>
-            <!--这个模块 等人员量上来在后期扩展-->
-            <!--<van-cell  icon="friends-o" value="动一动" v-on:click="activity"  is-link />-->
-            <van-cell  icon="smile-o" value="找一找" v-on:click="help"  is-link />
+            <van-cell  icon="smile-o" value="聚一聚" v-on:click="church"  is-link />
         </van-cell-group>
-        <br/>
+        <br>
+        <div style="text-align: left; font-size: small;font-weight: lighter">&nbsp;平常看看&nbsp;不懂问问&nbsp;找人聊聊&nbsp;困难帮帮&nbsp;周日聚聚</div>
     </div>
 </template>
 <script>
@@ -65,8 +65,8 @@ export default {
   help(){
       this.$router.push("/help");
   },
-  activity(){
-      this.$router.push("/activity");
+  church(){
+      this.$router.push("/church");
   }
 
   },

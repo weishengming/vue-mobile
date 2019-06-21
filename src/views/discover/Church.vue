@@ -23,7 +23,7 @@
             [Tabs.name]:Tabs,
             [Icon.name]:Icon,
         },
-        name: "Activity",
+        name: "Church",
         methods:{
             onClickLeft(){
                 this.$router.push("/discover")
