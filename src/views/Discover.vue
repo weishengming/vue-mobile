@@ -28,7 +28,7 @@
             <van-cell  icon="smile-o" value="聚一聚" v-on:click="church"  is-link />
         </van-cell-group>
         <br>
-        <div style="text-align: left; font-size: small;font-weight: lighter">&nbsp;平常看看&nbsp;不懂问问&nbsp;找人聊聊&nbsp;困难帮帮&nbsp;周日聚聚</div>
+        <div style="text-align: left; font-size: small;font-weight: lighter">&nbsp;平常看看&nbsp;不懂问问&nbsp;找人聊聊&nbsp;困难帮帮&nbsp;没事聚聚</div>
     </div>
 </template>
 <script>
