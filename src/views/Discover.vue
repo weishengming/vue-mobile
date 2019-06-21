@@ -28,7 +28,12 @@
             <van-cell  icon="smile-o" value="聚一聚" v-on:click="church"  is-link />
         </van-cell-group>
         <br>
-        <div style="text-align: left; font-size: small;font-weight: lighter">&nbsp;饥渴看看&nbsp;疑惑问问&nbsp;肢体聊聊&nbsp;困难帮帮&nbsp;家人聚聚</div>
+        <!--<div style="text-align: left; font-size: small;font-weight: lighter">&nbsp;饥渴看看&nbsp;疑惑问问&nbsp;肢体聊聊&nbsp;困难帮帮&nbsp;家人聚聚</div>-->
+        <div style="position:absolute;bottom:-20px;width:100%;height:100px;font-size: xx-small;font-weight: lighter">
+        <div>&nbsp;&nbsp;因为我饿了，你们给我吃，渴了，你们给我喝；</div>
+        <div>&nbsp;&nbsp;我作客旅，你们留我住；我赤身露体，你们给我穿；</div>
+        <div>&nbsp;&nbsp;我病了，你们看顾我；我在监里，你们来看我。</div>
+        </div>
     </div>
 </template>
 <script>
